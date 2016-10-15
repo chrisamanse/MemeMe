@@ -29,7 +29,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lGg-8Q-oZI" secondAttribute="trailing" id="GkZ-80-eVX"/>
-                            <constraint firstItem="lGg-8Q-oZI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Pfl-wC-gLf"/>
+                            <constraint firstItem="lGg-8Q-oZI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bon-zf-8z6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lGg-8Q-oZI" secondAttribute="bottom" id="ihZ-5X-2Mz"/>
                             <constraint firstItem="lGg-8Q-oZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rxB-dW-9fd"/>
                         </constraints>
@@ -46,7 +46,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="871" y="139"/>
+            <point key="canvasLocation" x="869.60000000000002" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EAS-qr-JWM">
