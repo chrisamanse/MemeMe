@@ -21,9 +21,6 @@
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGg-8Q-oZI">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="J2f-Mo-6yT" appends="YES" id="4CF-CX-bo6"/>
-                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,17 +31,18 @@
                             <constraint firstItem="lGg-8Q-oZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rxB-dW-9fd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hzv-lH-oPs"/>
+                    <navigationItem key="navigationItem" id="hzv-lH-oPs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="pOV-12-Eb2">
+                            <connections>
+                                <action selector="didTapChoosePhoto:" destination="BYZ-38-t0r" id="Cvk-tp-jZa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="lGg-8Q-oZI" id="k0E-hy-ui5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="J2f-Mo-6yT">
-                    <connections>
-                        <action selector="didTapImage:" destination="BYZ-38-t0r" id="qke-9V-U4X"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="869.60000000000002" y="138.98050974512745"/>
         </scene>

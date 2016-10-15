@@ -16,13 +16,35 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func didTapImage(_ sender: AnyObject) {
+    @IBAction func didTapChoosePhoto(_ sender: AnyObject) {
         print("did tap image")
         
+        let alertController = UIAlertController(title: "Choose Photo", message: "Choose a photo for your meme.", preferredStyle: .actionSheet)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let camera = UIAlertAction(title: "Take Photo", style: .default) { _ in
+                self.showImagePicker(useCamera: true)
+            }
+            
+            alertController.addAction(camera)
+        }
+        
+        let imagePicker = UIAlertAction(title: "Choose from Library", style: .default) { _ in
+            self.showImagePicker()
+        }
+        alertController.addAction(imagePicker)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alertController, animated: true)
+    }
+    
+    func showImagePicker(useCamera: Bool = false) {
         let imagePickerController = UIImagePickerController()
         
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = useCamera ? .camera : .photoLibrary
         
         present(imagePickerController, animated: true)
     }
