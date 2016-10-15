@@ -14,6 +14,7 @@
 		DFF3D6E51DB2E1D100FF92F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF3D6E31DB2E1D100FF92F1 /* LaunchScreen.storyboard */; };
 		DFF3D6F01DB2E1D100FF92F1 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF3D6EF1DB2E1D100FF92F1 /* MemeMeTests.swift */; };
 		DFF3D6FB1DB2E1D100FF92F1 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF3D6FA1DB2E1D100FF92F1 /* MemeMeUITests.swift */; };
+		DFF3D7091DB2F54100FF92F1 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFF3D7081DB2F54100FF92F1 /* impact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DFF3D6F61DB2E1D100FF92F1 /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF3D6FA1DB2E1D100FF92F1 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		DFF3D6FC1DB2E1D100FF92F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF3D7081DB2F54100FF92F1 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DFF3D6E11DB2E1D100FF92F1 /* Assets.xcassets */,
 				DFF3D6E31DB2E1D100FF92F1 /* LaunchScreen.storyboard */,
 				DFF3D6E61DB2E1D100FF92F1 /* Info.plist */,
+				DFF3D7081DB2F54100FF92F1 /* impact.ttf */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF3D7091DB2F54100FF92F1 /* impact.ttf in Resources */,
 				DFF3D6E51DB2E1D100FF92F1 /* LaunchScreen.storyboard in Resources */,
 				DFF3D6E21DB2E1D100FF92F1 /* Assets.xcassets in Resources */,
 				DFF3D6E01DB2E1D100FF92F1 /* Main.storyboard in Resources */,
@@ -512,6 +516,7 @@
 				DFF3D7011DB2E1D100FF92F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFF3D7021DB2E1D100FF92F1 /* Build configuration list for PBXNativeTarget "MemeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				DFF3D7041DB2E1D100FF92F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFF3D7051DB2E1D100FF92F1 /* Build configuration list for PBXNativeTarget "MemeMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +534,7 @@
 				DFF3D7071DB2E1D100FF92F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
