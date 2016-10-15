@@ -32,7 +32,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hzv-lH-oPs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="YOi-ld-iIn"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="YOi-ld-iIn">
+                            <connections>
+                                <action selector="didTapShare:" destination="BYZ-38-t0r" id="TfB-JA-SBh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="pOV-12-Eb2">
                             <connections>
                                 <action selector="didTapChoosePhoto:" destination="BYZ-38-t0r" id="Cvk-tp-jZa"/>

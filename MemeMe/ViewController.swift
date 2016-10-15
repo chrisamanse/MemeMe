@@ -39,6 +39,17 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    @IBAction func didTapShare(_ sender: AnyObject) {
+        guard let image = generateMeme() else {
+            showErrorAlert(title: "Error", message: "Something went terribly wrong. Failed to generate meme.")
+            return
+        }
+        
+        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        present(activityController, animated: true)
+    }
+    
     func showImagePicker(useCamera: Bool = false) {
         let imagePickerController = UIImagePickerController()
         
@@ -47,6 +58,29 @@ class ViewController: UIViewController {
         imagePickerController.sourceType = useCamera ? .camera : .photoLibrary
         
         present(imagePickerController, animated: true)
+    }
+    
+    func generateMeme() -> UIImage? {
+        UIGraphicsBeginImageContext(view.bounds.size)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        return image
+    }
+    
+    func showErrorAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .default)
+        
+        alertController.addAction(ok)
+        
+        present(alertController, animated: true, completion: completion)
     }
 }
 
