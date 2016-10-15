@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGg-8Q-oZI">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGg-8Q-oZI">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -34,9 +34,16 @@
                             <constraint firstItem="lGg-8Q-oZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rxB-dW-9fd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="lGg-8Q-oZI" id="k0E-hy-ui5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="J2f-Mo-6yT"/>
+                <tapGestureRecognizer id="J2f-Mo-6yT">
+                    <connections>
+                        <action selector="didTapImage:" destination="BYZ-38-t0r" id="qke-9V-U4X"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
