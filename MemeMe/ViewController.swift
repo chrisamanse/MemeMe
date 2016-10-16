@@ -174,7 +174,7 @@ extension ViewController {
     
     func keyboardWillShow(notification: NSNotification) {
         print("Keyboard will show")
-        guard bottomTextField.isFirstResponder else {
+        guard bottomTextField.isFirstResponder && view.frame.origin.y == 0 else {
             return
         }
         
