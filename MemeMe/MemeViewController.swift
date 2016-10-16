@@ -18,6 +18,7 @@ class MemeViewController: UIViewController {
     
     @IBOutlet weak var cameraBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var fontsBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +88,9 @@ class MemeViewController: UIViewController {
         fontCollectionVC.selectedFont = topTextField.font
         
         let navigationController = UINavigationController(rootViewController: fontCollectionVC)
+        
+        navigationController.modalPresentationStyle = .popover
+        navigationController.popoverPresentationController?.barButtonItem = fontsBarButtonItem
         
         present(navigationController, animated: true)
     }
