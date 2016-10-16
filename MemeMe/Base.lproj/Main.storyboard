@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -70,11 +71,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MemeMe" id="hzv-lH-oPs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="YOi-ld-iIn">
-                            <connections>
-                                <action selector="didTapShare:" destination="BYZ-38-t0r" id="TfB-JA-SBh"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="action" id="YOi-ld-iIn">
+                                <connections>
+                                    <action selector="didTapShare:" destination="BYZ-38-t0r" id="TfB-JA-SBh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="font" id="Pia-dx-DDP"/>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="pOV-12-Eb2">
                             <connections>
                                 <action selector="didTapChoosePhoto:" destination="BYZ-38-t0r" id="Cvk-tp-jZa"/>
@@ -118,4 +122,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="font" width="22" height="22"/>
+    </resources>
 </document>
