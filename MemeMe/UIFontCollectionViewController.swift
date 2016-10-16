@@ -12,17 +12,21 @@ class UIFontCollectionViewController: UITableViewController {
     
     let fontCollection = UIFontCollection()
     var selectedFont: UIFont?
+    var fontSize: CGFloat = 40
+    var textLabelNumberOfLines = 4
     
     weak var delegate: UIFontCollectionViewControllerDelegate?
     
     private var sectionForSectionIndexTitleCache = [String: Int]()
+    
+    private let estimatedRowHeight: CGFloat = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didPressCancel(_:)))
         
-        tableView.estimatedRowHeight = 50
+        tableView.estimatedRowHeight = estimatedRowHeight
         
         if let font = selectedFont {
             let familyName = font.familyName
@@ -89,14 +93,14 @@ class UIFontCollectionViewController: UITableViewController {
             cell = reusedCell
         } else {
             let newCell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-            newCell.textLabel!.numberOfLines = 4
+            newCell.textLabel!.numberOfLines = textLabelNumberOfLines
             
             cell = newCell
         }
         
         let fontName = fontCollection.fontFamilies[indexPath.section].fontNames[indexPath.row]
         
-        let font = UIFont(name: fontName, size: 40)!
+        let font = UIFont(name: fontName, size: fontSize)!
         
         cell.textLabel?.attributedText = NSAttributedString(string: fontName.humanReadable(), attributes: MemeTextAttributes(font: font).textAttributes)
         
