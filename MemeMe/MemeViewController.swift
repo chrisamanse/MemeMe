@@ -64,11 +64,26 @@ class MemeViewController: UIViewController {
     
     @IBAction func didTapShare(_ sender: UIBarButtonItem) {
         do {
-            let meme = try currentMeme()
+            guard let image = imageView.image else {
+                throw CreateMemeError.noImage
+            }
+            let memedImage = try generateMeme()
             
-            let activityController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
+            let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
             
             activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
+            
+            activityController.completionWithItemsHandler = { _, completed, _, error in
+                guard completed else {
+                    print("Share failed. Error: \(error)")
+                    self.showErrorAlert(title: "Share Failed", message: "Sharing of meme failed. Please try again.")
+                    return
+                }
+                
+                self.saveMeme(image: image, memedImage: memedImage)
+                
+                self.showErrorAlert(title: "Success", message: "Successfully shared Meme.")
+            }
             
             present(activityController, animated: true)
         } catch CreateMemeError.noImage {
@@ -131,16 +146,13 @@ class MemeViewController: UIViewController {
         bottomTextField.defaultTextAttributes = dict
     }
     
-    func currentMeme() throws -> Meme {
-        guard let image = imageView.image else {
-            throw CreateMemeError.noImage
-        }
-        let memedImage = try generateMeme()
+    func saveMeme(image: UIImage, memedImage: UIImage) {
+        let meme = Meme(topText: topTextField.text!,
+                        bottomText: bottomTextField.text!,
+                        image: image,
+                        memedImage: memedImage)
         
-        return Meme(topText: topTextField.text!,
-                    bottomText: bottomTextField.text!,
-                    image: image,
-                    memedImage: memedImage)
+        print("Saved meme: \(meme)")
     }
     
     func showErrorAlert(title: String, message: String, completion: (() -> Void)? = nil) {
