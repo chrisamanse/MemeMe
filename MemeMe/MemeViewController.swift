@@ -68,7 +68,6 @@ class MemeViewController: UIViewController {
         let imagePickerController = UIImagePickerController()
         
         imagePickerController.delegate = self
-        imagePickerController.allowsEditing = true
         imagePickerController.sourceType = useCamera ? .camera : .photoLibrary
         
         present(imagePickerController, animated: true)
@@ -107,11 +106,9 @@ class MemeViewController: UIViewController {
 
 extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
-            return
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
         }
-        
-        imageView.image = image
         
         self.dismiss(animated: true)
     }
