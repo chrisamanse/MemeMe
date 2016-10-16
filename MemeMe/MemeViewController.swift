@@ -83,6 +83,8 @@ class MemeViewController: UIViewController {
         
         fontCollectionVC.navigationItem.title = "Fonts"
         
+        fontCollectionVC.delegate = self
+        
         let navigationController = UINavigationController(rootViewController: fontCollectionVC)
         
         present(navigationController, animated: true)
@@ -182,6 +184,14 @@ extension MemeViewController: UITextFieldDelegate {
     enum DefaultInputs {
         static let topTextField: String = "TOP"
         static let bottomTextField: String = "BOTTOM"
+    }
+}
+
+// MARK: Font collection view controller delegate
+
+extension MemeViewController: UIFontCollectionViewControllerDelegate {
+    func fontCollectionViewController(_ contorller: UIFontCollectionViewController, didChooseFontName fontName: String) {
+        setMemeTextAttributes(MemeTextAttributes(font: UIFont(name: fontName, size: 40)!))
     }
 }
 
