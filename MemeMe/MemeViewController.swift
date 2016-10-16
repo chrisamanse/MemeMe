@@ -78,6 +78,16 @@ class MemeViewController: UIViewController {
         present(activityController, animated: true)
     }
     
+    @IBAction func didTapFonts(_ sender: UIBarButtonItem) {
+        let fontCollectionVC = UIFontCollectionViewController()
+        
+        fontCollectionVC.navigationItem.title = "Fonts"
+        
+        let navigationController = UINavigationController(rootViewController: fontCollectionVC)
+        
+        present(navigationController, animated: true)
+    }
+    
     func showImagePicker(useCamera: Bool = false) {
         let imagePickerController = UIImagePickerController()
         

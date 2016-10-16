@@ -77,7 +77,11 @@
                                     <action selector="didTapShare:" destination="BYZ-38-t0r" id="TfB-JA-SBh"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="font" id="Pia-dx-DDP"/>
+                            <barButtonItem image="font" id="Pia-dx-DDP">
+                                <connections>
+                                    <action selector="didTapFonts:" destination="BYZ-38-t0r" id="YLa-TF-5bz"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="pOV-12-Eb2">
                             <connections>
