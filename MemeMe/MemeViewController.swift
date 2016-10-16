@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MemeViewController: UIViewController {
     
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
             return
@@ -119,7 +119,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 // MARK: Text Field Delegate
 
-extension ViewController: UITextFieldDelegate {
+extension MemeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == topTextField {
             bottomTextField.becomeFirstResponder()
@@ -161,7 +161,7 @@ extension ViewController: UITextFieldDelegate {
 
 // MARK: Keyboard
 
-extension ViewController {
+extension MemeViewController {
     func subscribeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
