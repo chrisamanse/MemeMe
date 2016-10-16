@@ -45,9 +45,7 @@ class MemeViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Choose Photo", message: "Choose a photo for your meme.", preferredStyle: .actionSheet)
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            alertController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
-        }
+        alertController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
         
         let camera = UIAlertAction(title: "Take Photo", style: .default) { _ in
             self.showImagePicker(useCamera: true)
@@ -72,9 +70,7 @@ class MemeViewController: UIViewController {
         
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
-        }
+        activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
         
         present(activityController, animated: true)
     }
@@ -98,10 +94,8 @@ class MemeViewController: UIViewController {
     func showImagePicker(useCamera: Bool = false) {
         let imagePickerController = UIImagePickerController()
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            imagePickerController.modalPresentationStyle = .popover
-            imagePickerController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
-        }
+        imagePickerController.modalPresentationStyle = .popover
+        imagePickerController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
         
         imagePickerController.delegate = self
         imagePickerController.sourceType = useCamera ? .camera : .photoLibrary
