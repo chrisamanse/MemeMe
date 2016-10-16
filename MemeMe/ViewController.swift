@@ -20,6 +20,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        subscribeKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unsubscribeKeyboardNotifications()
+    }
+    
     @IBAction func didTapChoosePhoto(_ sender: AnyObject) {
         print("did tap image")
         
@@ -97,5 +105,38 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         imageView.image = image
         
         self.dismiss(animated: true)
+    }
+}
+
+// MARK: Keyboard
+
+extension ViewController {
+    func subscribeKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+    }
+    
+    func unsubscribeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        print("Keyboard will show")
+        guard bottomTextField.isFirstResponder else {
+            return
+        }
+        
+        print("bottom text field is first responder")
+        
+        view.frame.origin.y -= keyboardHeight(in: notification)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        print("Keyboard will hide")
+        
+        view.frame.origin.y = 0
+    }
+    
+    func keyboardHeight(in notification: NSNotification) -> CGFloat {
+        return (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
     }
 }
