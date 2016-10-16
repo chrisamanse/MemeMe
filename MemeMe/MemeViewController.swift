@@ -76,20 +76,20 @@ class MemeViewController: UIViewController {
             activityController.completionWithItemsHandler = { _, completed, _, error in
                 guard completed else {
                     print("Share failed. Error: \(error)")
-                    self.showErrorAlert(title: "Share Failed", message: "Sharing of meme failed. Please try again.")
+                    self.showAlert(title: "Share Failed", message: "Sharing of meme failed. Please try again.")
                     return
                 }
                 
                 self.saveMeme(image: image, memedImage: memedImage)
                 
-                self.showErrorAlert(title: "Success", message: "Successfully shared Meme.")
+                self.showAlert(title: "Success", message: "Successfully shared Meme.")
             }
             
             present(activityController, animated: true)
         } catch CreateMemeError.noImage {
-            showErrorAlert(title: "No Image", message: "No image found, either take a photo or select from photo library.")
+            showAlert(title: "No Image", message: "No image found, either take a photo or select from photo library.")
         } catch {
-            showErrorAlert(title: "Error", message: "Something went terribly wrong. Failed to generate meme.")
+            showAlert(title: "Error", message: "Something went terribly wrong. Failed to generate meme.")
         }
     }
     
@@ -155,7 +155,7 @@ class MemeViewController: UIViewController {
         print("Saved meme: \(meme)")
     }
     
-    func showErrorAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+    func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .default)
