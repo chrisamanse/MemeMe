@@ -63,16 +63,19 @@ class MemeViewController: UIViewController {
     }
     
     @IBAction func didTapShare(_ sender: UIBarButtonItem) {
-        guard let image = generateMeme() else {
+        do {
+            let meme = try currentMeme()
+            
+            let activityController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
+            
+            activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
+            
+            present(activityController, animated: true)
+        } catch CreateMemeError.noImage {
+            showErrorAlert(title: "No Image", message: "No image found, either take a photo or select from photo library.")
+        } catch {
             showErrorAlert(title: "Error", message: "Something went terribly wrong. Failed to generate meme.")
-            return
         }
-        
-        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
-        activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
-        
-        present(activityController, animated: true)
     }
     
     @IBAction func didTapFonts(_ sender: UIBarButtonItem) {
@@ -106,7 +109,7 @@ class MemeViewController: UIViewController {
         present(imagePickerController, animated: true)
     }
     
-    func generateMeme() -> UIImage? {
+    func generateMeme() throws -> UIImage {
         UIGraphicsBeginImageContext(canvasView.bounds.size)
         defer {
             UIGraphicsEndImageContext()
@@ -114,7 +117,9 @@ class MemeViewController: UIViewController {
         
         canvasView.drawHierarchy(in: canvasView.bounds, afterScreenUpdates: true)
         
-        let image = UIGraphicsGetImageFromCurrentImageContext()
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            throw CreateMemeError.generateMemeImageError
+        }
         
         return image
     }
@@ -124,6 +129,18 @@ class MemeViewController: UIViewController {
         
         topTextField.defaultTextAttributes = dict
         bottomTextField.defaultTextAttributes = dict
+    }
+    
+    func currentMeme() throws -> Meme {
+        guard let image = imageView.image else {
+            throw CreateMemeError.noImage
+        }
+        let memedImage = try generateMeme()
+        
+        return Meme(topText: topTextField.text!,
+                    bottomText: bottomTextField.text!,
+                    image: image,
+                    memedImage: memedImage)
     }
     
     func showErrorAlert(title: String, message: String, completion: (() -> Void)? = nil) {
@@ -229,5 +246,14 @@ extension MemeViewController {
     
     func keyboardHeight(in notification: NSNotification) -> CGFloat {
         return (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+    }
+}
+
+// MARK: Meme Error
+
+extension MemeViewController {
+    enum CreateMemeError: Error {
+        case noImage
+        case generateMemeImageError
     }
 }
