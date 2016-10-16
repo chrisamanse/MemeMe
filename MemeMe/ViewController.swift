@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
