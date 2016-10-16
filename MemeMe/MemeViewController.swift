@@ -35,6 +35,12 @@ class MemeViewController: UIViewController {
     
     @IBAction func didTapChoosePhoto(_ sender: UIBarButtonItem) {
         print("did tap image")
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            // Immediately show image picker, since camera is not available anyway
+            showImagePicker()
+            
+            return
+        }
         
         let alertController = UIAlertController(title: "Choose Photo", message: "Choose a photo for your meme.", preferredStyle: .actionSheet)
         
@@ -42,19 +48,16 @@ class MemeViewController: UIViewController {
             alertController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
         }
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let camera = UIAlertAction(title: "Take Photo", style: .default) { _ in
-                self.showImagePicker(useCamera: true)
-            }
-            
-            alertController.addAction(camera)
+        let camera = UIAlertAction(title: "Take Photo", style: .default) { _ in
+            self.showImagePicker(useCamera: true)
         }
         
         let imagePicker = UIAlertAction(title: "Choose from Library", style: .default) { _ in
             self.showImagePicker()
         }
-        alertController.addAction(imagePicker)
         
+        alertController.addAction(camera)
+        alertController.addAction(imagePicker)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(alertController, animated: true)
