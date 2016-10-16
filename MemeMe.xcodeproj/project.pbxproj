@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF13183D1DB30C760006759C /* MemeTextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13183C1DB30C760006759C /* MemeTextAttributes.swift */; };
+		DF13183F1DB33FC80006759C /* UIFontCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13183E1DB33FC80006759C /* UIFontCollection.swift */; };
 		DFF3D6DB1DB2E1D000FF92F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */; };
 		DFF3D6DD1DB2E1D000FF92F1 /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */; };
 		DFF3D6E01DB2E1D100FF92F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF3D6DE1DB2E1D100FF92F1 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		DF13183C1DB30C760006759C /* MemeTextAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextAttributes.swift; sourceTree = "<group>"; };
+		DF13183E1DB33FC80006759C /* UIFontCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontCollection.swift; sourceTree = "<group>"; };
 		DFF3D6D71DB2E1D000FF92F1 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */,
 				DF13183C1DB30C760006759C /* MemeTextAttributes.swift */,
+				DF13183E1DB33FC80006759C /* UIFontCollection.swift */,
 				DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */,
 				DFF3D6DE1DB2E1D100FF92F1 /* Main.storyboard */,
 				DFF3D6E11DB2E1D100FF92F1 /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 			files = (
 				DFF3D6DD1DB2E1D000FF92F1 /* MemeViewController.swift in Sources */,
 				DF13183D1DB30C760006759C /* MemeTextAttributes.swift in Sources */,
+				DF13183F1DB33FC80006759C /* UIFontCollection.swift in Sources */,
 				DFF3D6DB1DB2E1D000FF92F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
