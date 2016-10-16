@@ -23,6 +23,8 @@ class MemeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        shareBarButtonItem.isEnabled = false
+        
         setMemeTextAttributes(MemeTextAttributes(font: topTextField.font!))
     }
     
@@ -170,6 +172,8 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
+            
+            shareBarButtonItem.isEnabled = true
         }
         
         self.dismiss(animated: true)
