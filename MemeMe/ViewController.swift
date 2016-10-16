@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setMemeTextAttributes(MemeTextAttributes(font: topTextField.font!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +85,13 @@ class ViewController: UIViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         return image
+    }
+    
+    func setMemeTextAttributes(_ attributes: MemeTextAttributes) {
+        let dict = attributes.textAttributes
+        
+        topTextField.defaultTextAttributes = dict
+        bottomTextField.defaultTextAttributes = dict
     }
     
     func showErrorAlert(title: String, message: String, completion: (() -> Void)? = nil) {
