@@ -87,6 +87,9 @@ class MemeViewController: UIViewController {
         
         navigationController.modalPresentationStyle = .popover
         navigationController.popoverPresentationController?.barButtonItem = fontsBarButtonItem
+        navigationController.navigationBar.titleTextAttributes = self.navigationController?.navigationBar.titleTextAttributes
+        navigationController.navigationBar.barTintColor = self.navigationController?.navigationBar.barTintColor
+        navigationController.navigationBar.tintColor = self.navigationController?.navigationBar.tintColor
         
         present(navigationController, animated: true)
     }
