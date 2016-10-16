@@ -26,6 +26,8 @@ extension String {
     }
     
     func humanReadable() -> String {
+        // Convert strings to a more readable format
+        // Ex. "ABTestMe-Later" -> "AB Test Me Later"
         let characters = Array(self.characters)
         var result = String(characters[0])
         
