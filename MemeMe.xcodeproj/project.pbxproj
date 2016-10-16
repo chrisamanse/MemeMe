@@ -11,6 +11,7 @@
 		DF13183F1DB33FC80006759C /* UIFontCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF13183E1DB33FC80006759C /* UIFontCollection.swift */; };
 		DF1318411DB353C70006759C /* UIFontCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1318401DB353C70006759C /* UIFontCollectionViewController.swift */; };
 		DF1318431DB354DD0006759C /* String+HumanReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1318421DB354DD0006759C /* String+HumanReadable.swift */; };
+		DF1318451DB392CC0006759C /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1318441DB392CC0006759C /* Meme.swift */; };
 		DFF3D6DB1DB2E1D000FF92F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */; };
 		DFF3D6DD1DB2E1D000FF92F1 /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */; };
 		DFF3D6E01DB2E1D100FF92F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF3D6DE1DB2E1D100FF92F1 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		DF13183E1DB33FC80006759C /* UIFontCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontCollection.swift; sourceTree = "<group>"; };
 		DF1318401DB353C70006759C /* UIFontCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontCollectionViewController.swift; sourceTree = "<group>"; };
 		DF1318421DB354DD0006759C /* String+HumanReadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HumanReadable.swift"; sourceTree = "<group>"; };
+		DF1318441DB392CC0006759C /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		DFF3D6D71DB2E1D000FF92F1 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */,
+				DF1318441DB392CC0006759C /* Meme.swift */,
 				DF13183C1DB30C760006759C /* MemeTextAttributes.swift */,
 				DF13183E1DB33FC80006759C /* UIFontCollection.swift */,
 				DF1318421DB354DD0006759C /* String+HumanReadable.swift */,
@@ -280,6 +283,7 @@
 			files = (
 				DFF3D6DD1DB2E1D000FF92F1 /* MemeViewController.swift in Sources */,
 				DF13183D1DB30C760006759C /* MemeTextAttributes.swift in Sources */,
+				DF1318451DB392CC0006759C /* Meme.swift in Sources */,
 				DF13183F1DB33FC80006759C /* UIFontCollection.swift in Sources */,
 				DF1318411DB353C70006759C /* UIFontCollectionViewController.swift in Sources */,
 				DF1318431DB354DD0006759C /* String+HumanReadable.swift in Sources */,
