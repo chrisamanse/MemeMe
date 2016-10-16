@@ -77,6 +77,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="canvasView" destination="4Au-FC-K1L" id="eyg-9d-vMl"/>
                         <outlet property="imageView" destination="lGg-8Q-oZI" id="k0E-hy-ui5"/>
                     </connections>
                 </viewController>
