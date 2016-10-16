@@ -24,33 +24,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGg-8Q-oZI">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DZz-g8-pTb">
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gt2-c1-RPR">
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-FC-K1L">
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGg-8Q-oZI">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DZz-g8-pTb">
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gt2-c1-RPR">
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Gt2-c1-RPR" secondAttribute="bottom" constant="20" id="73g-jN-vgr"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Gt2-c1-RPR" secondAttribute="trailing" id="7cH-8r-vsX"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="DZz-g8-pTb" secondAttribute="trailing" id="C7r-H3-OYv"/>
+                                    <constraint firstAttribute="trailing" secondItem="lGg-8Q-oZI" secondAttribute="trailing" id="Ewe-wD-5a9"/>
+                                    <constraint firstItem="DZz-g8-pTb" firstAttribute="top" secondItem="4Au-FC-K1L" secondAttribute="top" constant="20" id="KH2-sa-BI1"/>
+                                    <constraint firstItem="lGg-8Q-oZI" firstAttribute="top" secondItem="4Au-FC-K1L" secondAttribute="top" id="OlT-do-sLV"/>
+                                    <constraint firstItem="DZz-g8-pTb" firstAttribute="leading" secondItem="4Au-FC-K1L" secondAttribute="leadingMargin" id="ae9-4C-f8P"/>
+                                    <constraint firstAttribute="bottom" secondItem="lGg-8Q-oZI" secondAttribute="bottom" id="dKv-ub-YjA"/>
+                                    <constraint firstItem="Gt2-c1-RPR" firstAttribute="leading" secondItem="4Au-FC-K1L" secondAttribute="leadingMargin" id="p1f-U5-kxW"/>
+                                    <constraint firstItem="lGg-8Q-oZI" firstAttribute="leading" secondItem="4Au-FC-K1L" secondAttribute="leading" id="ppb-1Y-Enz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gt2-c1-RPR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DC2-pu-QIT"/>
-                            <constraint firstAttribute="trailing" secondItem="lGg-8Q-oZI" secondAttribute="trailing" id="GkZ-80-eVX"/>
-                            <constraint firstItem="DZz-g8-pTb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="LUW-3T-nSS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gt2-c1-RPR" secondAttribute="bottom" constant="20" id="N3l-8f-lgx"/>
-                            <constraint firstItem="DZz-g8-pTb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YrI-YX-TzU"/>
-                            <constraint firstItem="lGg-8Q-oZI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bon-zf-8z6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lGg-8Q-oZI" secondAttribute="bottom" id="ihZ-5X-2Mz"/>
-                            <constraint firstItem="lGg-8Q-oZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rxB-dW-9fd"/>
-                            <constraint firstItem="DZz-g8-pTb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uFw-H0-DUG"/>
-                            <constraint firstItem="Gt2-c1-RPR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zW1-Oc-QLp"/>
+                            <constraint firstAttribute="trailing" secondItem="4Au-FC-K1L" secondAttribute="trailing" id="1SP-MW-1Ja"/>
+                            <constraint firstItem="4Au-FC-K1L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8qx-Iw-ghN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Au-FC-K1L" secondAttribute="bottom" id="S3C-Tm-P9d"/>
+                            <constraint firstItem="4Au-FC-K1L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ofe-RH-sxX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hzv-lH-oPs">
@@ -78,7 +89,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NAa-Qe-UbL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1c-qg-1nB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I1c-qg-1nB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
