@@ -62,12 +62,12 @@ class ViewController: UIViewController {
     }
     
     func generateMeme() -> UIImage? {
-        UIGraphicsBeginImageContext(view.bounds.size)
+        UIGraphicsBeginImageContext(canvasView.bounds.size)
         defer {
             UIGraphicsEndImageContext()
         }
         
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        canvasView.drawHierarchy(in: canvasView.bounds, afterScreenUpdates: true)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
