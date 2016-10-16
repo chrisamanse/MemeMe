@@ -11,6 +11,7 @@ import UIKit
 class UIFontCollectionViewController: UITableViewController {
     
     let fontCollection = UIFontCollection()
+    var selectedFont: UIFont?
     
     weak var delegate: UIFontCollectionViewControllerDelegate?
     
@@ -22,6 +23,17 @@ class UIFontCollectionViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didPressCancel(_:)))
         
         tableView.estimatedRowHeight = 50
+        
+        if let font = selectedFont {
+            let familyName = font.familyName
+            let fontFamily = UIFontFamily(name: familyName)
+            
+            if let section: Int = fontCollection.fontFamilies.index(of: fontFamily),
+                let row = fontFamily.fontNames.index(of: font.fontName) {
+                
+                tableView.scrollToRow(at: IndexPath(row: row, section: section), at: .middle, animated: false)
+            }
+        }
     }
     
     func didPressCancel(_ sender: AnyObject) {
@@ -87,6 +99,8 @@ class UIFontCollectionViewController: UITableViewController {
         let font = UIFont(name: fontName, size: 40)!
         
         cell.textLabel?.attributedText = NSAttributedString(string: fontName.humanReadable(), attributes: MemeTextAttributes(font: font).textAttributes)
+        
+        cell.accessoryType = font == selectedFont ? .checkmark : .none
         
         return cell
     }

@@ -84,6 +84,7 @@ class MemeViewController: UIViewController {
         fontCollectionVC.navigationItem.title = "Fonts"
         
         fontCollectionVC.delegate = self
+        fontCollectionVC.selectedFont = topTextField.font
         
         let navigationController = UINavigationController(rootViewController: fontCollectionVC)
         
