@@ -16,6 +16,9 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    @IBOutlet weak var cameraBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,10 +33,14 @@ class MemeViewController: UIViewController {
         unsubscribeKeyboardNotifications()
     }
     
-    @IBAction func didTapChoosePhoto(_ sender: AnyObject) {
+    @IBAction func didTapChoosePhoto(_ sender: UIBarButtonItem) {
         print("did tap image")
         
         let alertController = UIAlertController(title: "Choose Photo", message: "Choose a photo for your meme.", preferredStyle: .actionSheet)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alertController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
+        }
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let camera = UIAlertAction(title: "Take Photo", style: .default) { _ in
@@ -53,7 +60,7 @@ class MemeViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    @IBAction func didTapShare(_ sender: AnyObject) {
+    @IBAction func didTapShare(_ sender: UIBarButtonItem) {
         guard let image = generateMeme() else {
             showErrorAlert(title: "Error", message: "Something went terribly wrong. Failed to generate meme.")
             return
@@ -61,11 +68,20 @@ class MemeViewController: UIViewController {
         
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
+        }
+        
         present(activityController, animated: true)
     }
     
     func showImagePicker(useCamera: Bool = false) {
         let imagePickerController = UIImagePickerController()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            imagePickerController.modalPresentationStyle = .popover
+            imagePickerController.popoverPresentationController?.barButtonItem = cameraBarButtonItem
+        }
         
         imagePickerController.delegate = self
         imagePickerController.sourceType = useCamera ? .camera : .photoLibrary

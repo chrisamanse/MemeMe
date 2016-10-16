@@ -83,8 +83,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="Gt2-c1-RPR" id="a5t-1h-qhf"/>
+                        <outlet property="cameraBarButtonItem" destination="pOV-12-Eb2" id="RnH-jg-VDh"/>
                         <outlet property="canvasView" destination="4Au-FC-K1L" id="eyg-9d-vMl"/>
                         <outlet property="imageView" destination="lGg-8Q-oZI" id="k0E-hy-ui5"/>
+                        <outlet property="shareBarButtonItem" destination="YOi-ld-iIn" id="gKH-Yz-buy"/>
                         <outlet property="topTextField" destination="DZz-g8-pTb" id="C9n-cm-M8O"/>
                     </connections>
                 </viewController>
