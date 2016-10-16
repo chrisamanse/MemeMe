@@ -108,6 +108,22 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
 }
 
+// MARK: Text Field Delegate
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == topTextField {
+            bottomTextField.becomeFirstResponder()
+            
+            return false
+        }
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+}
+
 // MARK: Keyboard
 
 extension ViewController {
