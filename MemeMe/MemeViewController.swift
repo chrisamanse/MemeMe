@@ -249,13 +249,11 @@ extension MemeViewController {
     
     func keyboardWillShow(notification: NSNotification) {
         print("Keyboard will show")
-        guard bottomTextField.isFirstResponder && view.frame.origin.y == 0 else {
-            return
+        if bottomTextField.isFirstResponder {
+            print("bottom text field is first responder")
+            
+            view.frame.origin.y = -keyboardHeight(in: notification)
         }
-        
-        print("bottom text field is first responder")
-        
-        view.frame.origin.y -= keyboardHeight(in: notification)
     }
     
     func keyboardWillHide(notification: NSNotification) {
