@@ -122,6 +122,32 @@ extension ViewController: UITextFieldDelegate {
         
         return true
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if (textField == topTextField && textField.text == DefaultInputs.topTextField) ||
+            (textField == bottomTextField && textField.text == DefaultInputs.bottomTextField) {
+            textField.text = ""
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        let characterCount = textField.text?.characters.count ?? 0
+        
+        if textField == topTextField && characterCount == 0 {
+            textField.text = DefaultInputs.topTextField
+        } else if textField == bottomTextField && characterCount == 0 {
+            textField.text = DefaultInputs.bottomTextField
+        }
+        
+        return true
+    }
+    
+    enum DefaultInputs {
+        static let topTextField: String = "TOP"
+        static let bottomTextField: String = "BOTTOM"
+    }
 }
 
 // MARK: Keyboard
