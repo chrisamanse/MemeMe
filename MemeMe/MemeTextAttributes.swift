@@ -18,10 +18,12 @@ public struct MemeTextAttributes {
     public var foregroundColor: UIColor = .white
     
     public var alignment: NSTextAlignment = .center
+    public var lineBreakMode: NSLineBreakMode = .byTruncatingMiddle
     
     internal var paragraphStyle: NSParagraphStyle {
         let style = NSMutableParagraphStyle()
         style.alignment = alignment
+        style.lineBreakMode = lineBreakMode
         
         return style
     }
@@ -38,5 +40,9 @@ public struct MemeTextAttributes {
             NSForegroundColorAttributeName: foregroundColor,
             NSFontAttributeName: font
         ]
+    }
+    
+    public func attributedText(for string: String) -> NSAttributedString {
+        return NSAttributedString(string: string, attributes: textAttributes)
     }
 }
