@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "memeCell"
 
 class MemesCollectionViewController: UICollectionViewController {
     let collection = MemeCollection.default
@@ -18,11 +18,18 @@ class MemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let space: CGFloat = 3.0
+        let space: CGFloat = 1.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
         
         flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView!.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
@@ -32,9 +39,15 @@ class MemesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MemeCollectionViewCell
     
-        // Configure the cell
+        let meme = collection.memes[indexPath.row]
+        
+        let attributes = MemeTextAttributes(font: cell.topLabel.font)
+        
+        cell.topLabel.attributedText = attributes.attributedText(for: meme.topText)
+        cell.bottomLabel.attributedText = attributes.attributedText(for: meme.bottomText)
+        cell.memeImageView.image = meme.image
         
         return cell
     }
