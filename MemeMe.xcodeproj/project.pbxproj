@@ -94,6 +94,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF7147561DB4BF3200C4F27E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF1318401DB353C70006759C /* UIFontCollectionViewController.swift */,
+				DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */,
+				DF7147501DB497CC00C4F27E /* MemesTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DF7147571DB4BF3700C4F27E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF7147521DB4A11500C4F27E /* MemeTableViewCell.swift */,
+				DF7147541DB4BE7300C4F27E /* MemeCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DF7147581DB4BF4600C4F27E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF1318441DB392CC0006759C /* Meme.swift */,
+				DF71474C1DB4900E00C4F27E /* MemeCollection.swift */,
+				DF13183C1DB30C760006759C /* MemeTextAttributes.swift */,
+				DF13183E1DB33FC80006759C /* UIFontCollection.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		DFF3D6CE1DB2E1D000FF92F1 = {
 			isa = PBXGroup;
 			children = (
@@ -118,16 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				DFF3D6DA1DB2E1D000FF92F1 /* AppDelegate.swift */,
-				DF1318441DB392CC0006759C /* Meme.swift */,
-				DF71474C1DB4900E00C4F27E /* MemeCollection.swift */,
-				DF13183C1DB30C760006759C /* MemeTextAttributes.swift */,
-				DF13183E1DB33FC80006759C /* UIFontCollection.swift */,
 				DF1318421DB354DD0006759C /* String+HumanReadable.swift */,
-				DF1318401DB353C70006759C /* UIFontCollectionViewController.swift */,
-				DFF3D6DC1DB2E1D000FF92F1 /* MemeViewController.swift */,
-				DF7147501DB497CC00C4F27E /* MemesTableViewController.swift */,
-				DF7147521DB4A11500C4F27E /* MemeTableViewCell.swift */,
-				DF7147541DB4BE7300C4F27E /* MemeCollectionViewCell.swift */,
+				DF7147581DB4BF4600C4F27E /* Models */,
+				DF7147561DB4BF3200C4F27E /* ViewControllers */,
+				DF7147571DB4BF3700C4F27E /* Views */,
 				DFF3D6DE1DB2E1D100FF92F1 /* Main.storyboard */,
 				DFF3D6E11DB2E1D100FF92F1 /* Assets.xcassets */,
 				DFF3D6E31DB2E1D100FF92F1 /* LaunchScreen.storyboard */,
