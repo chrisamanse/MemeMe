@@ -215,7 +215,7 @@
         <!--Sent Memes-->
         <scene sceneID="rlJ-sO-mnU">
             <objects>
-                <collectionViewController id="GbA-7G-9PX" sceneMemberID="viewController">
+                <collectionViewController id="GbA-7G-9PX" customClass="MemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="aVz-PB-A0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,6 +278,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="u31-6A-yl0" id="cMC-mS-ptV"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C2-vS-mVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
