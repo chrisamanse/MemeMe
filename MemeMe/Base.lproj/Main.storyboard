@@ -228,13 +228,22 @@
                     <view key="view" contentMode="scaleToFill" id="vvr-xs-ETX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5iy-CY-G9f"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mDc-oR-prY" firstAttribute="top" secondItem="5iy-CY-G9f" secondAttribute="bottom" id="5dS-ft-5bU"/>
+                            <constraint firstAttribute="trailing" secondItem="5iy-CY-G9f" secondAttribute="trailing" id="HAq-Rc-Uik"/>
+                            <constraint firstItem="5iy-CY-G9f" firstAttribute="top" secondItem="fwD-Sa-XYy" secondAttribute="bottom" id="OJs-35-D9z"/>
+                            <constraint firstItem="5iy-CY-G9f" firstAttribute="leading" secondItem="vvr-xs-ETX" secondAttribute="leading" id="YvZ-yd-54i"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meme" id="xrm-Vt-xyR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubE-kF-QkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="788"/>
+            <point key="canvasLocation" x="1845.5999999999999" y="787.55622188905556"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="rlJ-sO-mnU">
