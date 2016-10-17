@@ -29,9 +29,23 @@ class MemesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath) as! MemeTableViewCell
         
-        // Configure the cell...
+        let meme = collection.memes[indexPath.row]
+        
+        let font: UIFont = cell.topLabel.font
+        
+        // Add line break mode in paragraph style of attributes
+        var attributes = MemeTextAttributes(font: font).textAttributes
+        let paragraphStyle = (attributes[NSParagraphStyleAttributeName] as! NSParagraphStyle).mutableCopy() as! NSMutableParagraphStyle
+        paragraphStyle.lineBreakMode = .byTruncatingMiddle
+        
+        attributes[NSParagraphStyleAttributeName] = paragraphStyle
+        
+        cell.topLabel.attributedText = NSAttributedString(string: meme.topText, attributes: attributes)
+        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: attributes)
+        cell.memeLabel.text = meme.topText + "..." + meme.bottomText
+        cell.memeImageView.image = meme.image
         
         return cell
     }
