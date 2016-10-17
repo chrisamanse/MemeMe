@@ -51,4 +51,20 @@ class MemesTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail", let destinationVC = segue.destination as? MemeDetailViewController {
+            let selectedMeme = collection.memes[tableView.indexPathForSelectedRow?.row ?? 0]
+            
+            destinationVC.memeImage = selectedMeme.memedImage
+        }
+    }
 }

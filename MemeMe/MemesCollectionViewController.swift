@@ -51,4 +51,20 @@ class MemesCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail", let destinationVC = segue.destination as? MemeDetailViewController {
+            let selectedMeme = collection.memes[collectionView!.indexPathsForSelectedItems?.first?.row ?? 0]
+            
+            destinationVC.memeImage = selectedMeme.memedImage
+        }
+    }
 }
