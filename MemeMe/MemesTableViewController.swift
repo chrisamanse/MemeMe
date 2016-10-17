@@ -33,17 +33,10 @@ class MemesTableViewController: UITableViewController {
         
         let meme = collection.memes[indexPath.row]
         
-        let font: UIFont = cell.topLabel.font
+        let attributes = MemeTextAttributes(font: cell.topLabel.font)
         
-        // Add line break mode in paragraph style of attributes
-        var attributes = MemeTextAttributes(font: font).textAttributes
-        let paragraphStyle = (attributes[NSParagraphStyleAttributeName] as! NSParagraphStyle).mutableCopy() as! NSMutableParagraphStyle
-        paragraphStyle.lineBreakMode = .byTruncatingMiddle
-        
-        attributes[NSParagraphStyleAttributeName] = paragraphStyle
-        
-        cell.topLabel.attributedText = NSAttributedString(string: meme.topText, attributes: attributes)
-        cell.bottomLabel.attributedText = NSAttributedString(string: meme.bottomText, attributes: attributes)
+        cell.topLabel.attributedText = attributes.attributedText(for: meme.topText)
+        cell.bottomLabel.attributedText = attributes.attributedText(for: meme.bottomText)
         cell.memeLabel.text = meme.topText + "..." + meme.bottomText
         cell.memeImageView.image = meme.image
         
