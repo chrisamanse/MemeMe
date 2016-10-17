@@ -262,11 +262,11 @@
             </objects>
             <point key="canvasLocation" x="704.79999999999995" y="1226.5367316341831"/>
         </scene>
-        <!--Collection-->
+        <!--Navigation Controller-->
         <scene sceneID="gmS-L9-y8j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yqi-kf-LTo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="A9Q-nd-iUI"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" id="A9Q-nd-iUI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SBF-Ec-zTw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -286,11 +286,11 @@
             </objects>
             <point key="canvasLocation" x="-76" y="1226.5367316341831"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="JbT-Uw-8MD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VdU-08-ppX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="Sz8-VM-wQh"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="Sz8-VM-wQh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Am6-HI-tGp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -332,7 +332,9 @@
     </scenes>
     <resources>
         <image name="close" width="24" height="24"/>
+        <image name="collection" width="30" height="30"/>
         <image name="font" width="22" height="22"/>
+        <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZOC-lm-145"/>
