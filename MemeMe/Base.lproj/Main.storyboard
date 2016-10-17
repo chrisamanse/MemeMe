@@ -216,7 +216,7 @@
         <scene sceneID="rlJ-sO-mnU">
             <objects>
                 <collectionViewController id="GbA-7G-9PX" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aVz-PB-A0C">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="aVz-PB-A0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,7 +227,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCell" id="Ysp-6g-1St">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCell" id="Ysp-6g-1St" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -259,6 +259,11 @@
                                     <constraint firstAttribute="trailing" secondItem="6Lz-sr-bO4" secondAttribute="trailing" id="ueJ-6a-ffd"/>
                                     <constraint firstItem="3d5-S9-vVN" firstAttribute="top" secondItem="6Lz-sr-bO4" secondAttribute="top" constant="4" id="x2D-BQ-ii5"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="bottomLabel" destination="Hzz-6h-Nxb" id="fi9-V8-hE3"/>
+                                    <outlet property="memeImageView" destination="6Lz-sr-bO4" id="dzQ-bx-t7f"/>
+                                    <outlet property="topLabel" destination="3d5-S9-vVN" id="eWw-Vy-CLP"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
