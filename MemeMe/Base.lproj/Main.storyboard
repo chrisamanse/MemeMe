@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -115,7 +116,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NAa-Qe-UbL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I1c-qg-1nB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1c-qg-1nB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,18 +138,39 @@
         <scene sceneID="T1l-Qh-CDE">
             <objects>
                 <tableViewController id="Gha-hQ-9dc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WUv-sp-iaT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="WUv-sp-iaT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tKu-fj-col">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeCell" rowHeight="102" id="tKu-fj-col">
+                                <rect key="frame" x="0.0" y="92" width="375" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKu-fj-col" id="dLy-QI-BzG">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="font" translatesAutoresizingMaskIntoConstraints="NO" id="43Q-tC-7pa">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="130" id="Qle-R0-BrK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP...BOTTOM" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-SG-gxn">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nl9-SG-gxn" firstAttribute="trailing" secondItem="dLy-QI-BzG" secondAttribute="trailingMargin" id="4Tm-PF-VoA"/>
+                                        <constraint firstItem="nl9-SG-gxn" firstAttribute="centerY" secondItem="dLy-QI-BzG" secondAttribute="centerY" id="9sM-Fs-Emt"/>
+                                        <constraint firstAttribute="bottom" secondItem="43Q-tC-7pa" secondAttribute="bottom" constant="1" id="Hk1-i3-iyC"/>
+                                        <constraint firstItem="nl9-SG-gxn" firstAttribute="leading" secondItem="43Q-tC-7pa" secondAttribute="trailing" constant="8" id="Vuq-jU-sAP"/>
+                                        <constraint firstItem="43Q-tC-7pa" firstAttribute="leading" secondItem="dLy-QI-BzG" secondAttribute="leadingMargin" id="Y3j-rj-Sqn"/>
+                                        <constraint firstItem="43Q-tC-7pa" firstAttribute="top" secondItem="dLy-QI-BzG" secondAttribute="top" id="coV-jV-a4R"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="146" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -172,7 +194,7 @@
         <scene sceneID="rlJ-sO-mnU">
             <objects>
                 <collectionViewController id="GbA-7G-9PX" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="aVz-PB-A0C">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aVz-PB-A0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -215,7 +237,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yqi-kf-LTo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Collection" id="A9Q-nd-iUI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SBF-Ec-zTw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SBF-Ec-zTw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,7 +261,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VdU-08-ppX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" id="Sz8-VM-wQh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Am6-HI-tGp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Am6-HI-tGp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,6 +285,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DLh-gM-gGF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="iog-L9-E9b">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -281,6 +304,6 @@
         <image name="font" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bJ6-0o-P6Z"/>
+        <segue reference="ZOC-lm-145"/>
     </inferredMetricsTieBreakers>
 </document>
