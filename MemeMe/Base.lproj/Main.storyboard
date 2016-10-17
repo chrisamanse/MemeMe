@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NAa-Qe-UbL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DLh-gM-gGF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.60000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2415" y="-168"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EAS-qr-JWM">
@@ -124,10 +124,155 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZL-gO-yNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1682" y="-169"/>
+        </scene>
+        <!--Sent Memes-->
+        <scene sceneID="T1l-Qh-CDE">
+            <objects>
+                <tableViewController id="Gha-hQ-9dc" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WUv-sp-iaT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tKu-fj-col">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKu-fj-col" id="dLy-QI-BzG">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gha-hQ-9dc" id="5DV-vS-XYn"/>
+                            <outlet property="delegate" destination="Gha-hQ-9dc" id="Cf1-Fj-q1z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="zJP-oe-lAn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JYK-K3-Cga">
+                            <connections>
+                                <segue destination="NAa-Qe-UbL" kind="presentation" id="ZOC-lm-145"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xG6-eH-shA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="475.41229385307349"/>
+        </scene>
+        <!--Sent Memes-->
+        <scene sceneID="rlJ-sO-mnU">
+            <objects>
+                <collectionViewController id="GbA-7G-9PX" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="aVz-PB-A0C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u31-6A-yl0">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ysp-6g-1St">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="GbA-7G-9PX" id="UeS-Se-0fB"/>
+                            <outlet property="delegate" destination="GbA-7G-9PX" id="hHn-vA-Pvf"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="6p3-0v-D3S">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JLi-Ba-edm">
+                            <connections>
+                                <segue destination="NAa-Qe-UbL" kind="presentation" id="bJ6-0o-P6Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9C2-vS-mVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="1226.5367316341831"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="gmS-L9-y8j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yqi-kf-LTo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Collection" id="A9Q-nd-iUI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SBF-Ec-zTw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GbA-7G-9PX" kind="relationship" relationship="rootViewController" id="j3k-Mu-EsM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xO-mG-Cef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="1226.5367316341831"/>
+        </scene>
+        <!--Table-->
+        <scene sceneID="JbT-Uw-8MD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VdU-08-ppX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Table" id="Sz8-VM-wQh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Am6-HI-tGp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gha-hQ-9dc" kind="relationship" relationship="rootViewController" id="qMg-WF-pYD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ig-a8-eig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="476.31184407796104"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KsI-p1-73c">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DLh-gM-gGF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iog-L9-E9b">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VdU-08-ppX" kind="relationship" relationship="viewControllers" id="jb0-CR-Gxt"/>
+                        <segue destination="yqi-kf-LTo" kind="relationship" relationship="viewControllers" id="BYJ-0C-jNK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5V-Xa-UGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1015.2" y="851.42428785607206"/>
         </scene>
     </scenes>
     <resources>
         <image name="font" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bJ6-0o-P6Z"/>
+    </inferredMetricsTieBreakers>
 </document>
