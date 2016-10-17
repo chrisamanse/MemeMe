@@ -80,15 +80,13 @@ class MemeViewController: UIViewController {
             activityController.popoverPresentationController?.barButtonItem = shareBarButtonItem
             
             activityController.completionWithItemsHandler = { _, completed, _, error in
-                guard completed else {
+                guard error == nil else {
                     print("Share failed. Error: \(error)")
                     self.showAlert(title: "Share Failed", message: "Sharing of meme failed. Please try again.")
                     return
                 }
                 
                 self.saveMeme(image: image, memedImage: memedImage)
-                
-                self.showAlert(title: "Success", message: "Successfully shared Meme.")
             }
             
             present(activityController, animated: true)
