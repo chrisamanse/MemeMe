@@ -84,7 +84,11 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem image="close" id="EoX-0I-pqp"/>
+                            <barButtonItem image="close" id="EoX-0I-pqp">
+                                <connections>
+                                    <action selector="didTapCancel:" destination="BYZ-38-t0r" id="P34-Te-LPt"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="camera" id="pOV-12-Eb2">
                                 <connections>
                                     <action selector="didTapChoosePhoto:" destination="BYZ-38-t0r" id="Cvk-tp-jZa"/>

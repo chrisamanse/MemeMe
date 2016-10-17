@@ -118,6 +118,10 @@ class MemeViewController: UIViewController {
         present(navigationController, animated: true)
     }
     
+    @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
     func showImagePicker(useCamera: Bool = false) {
         let imagePickerController = UIImagePickerController()
         
