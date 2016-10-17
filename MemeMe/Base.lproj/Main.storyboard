@@ -83,11 +83,14 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="pOV-12-Eb2">
-                            <connections>
-                                <action selector="didTapChoosePhoto:" destination="BYZ-38-t0r" id="Cvk-tp-jZa"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="close" id="EoX-0I-pqp"/>
+                            <barButtonItem systemItem="camera" id="pOV-12-Eb2">
+                                <connections>
+                                    <action selector="didTapChoosePhoto:" destination="BYZ-38-t0r" id="Cvk-tp-jZa"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="Gt2-c1-RPR" id="a5t-1h-qhf"/>
@@ -270,6 +273,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="24" height="24"/>
         <image name="font" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
