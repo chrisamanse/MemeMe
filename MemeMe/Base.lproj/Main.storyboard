@@ -231,7 +231,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5iy-CY-G9f"/>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mDc-oR-prY" firstAttribute="top" secondItem="5iy-CY-G9f" secondAttribute="bottom" id="5dS-ft-5bU"/>
                             <constraint firstAttribute="trailing" secondItem="5iy-CY-G9f" secondAttribute="trailing" id="HAq-Rc-Uik"/>
