@@ -199,19 +199,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u31-6A-yl0">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="130" height="101"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ysp-6g-1St">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCell" id="Ysp-6g-1St">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Lz-sr-bO4"/>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6Lz-sr-bO4" secondAttribute="bottom" id="2sP-5G-JbB"/>
+                                    <constraint firstItem="6Lz-sr-bO4" firstAttribute="top" secondItem="Ysp-6g-1St" secondAttribute="top" id="aFm-ao-qi1"/>
+                                    <constraint firstItem="6Lz-sr-bO4" firstAttribute="leading" secondItem="Ysp-6g-1St" secondAttribute="leading" id="mZE-Kj-GNP"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Lz-sr-bO4" secondAttribute="trailing" id="ueJ-6a-ffd"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -304,6 +313,6 @@
         <image name="font" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZOC-lm-145"/>
+        <segue reference="bJ6-0o-P6Z"/>
     </inferredMetricsTieBreakers>
 </document>
