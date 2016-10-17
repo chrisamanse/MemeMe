@@ -220,7 +220,7 @@
         <!--Meme-->
         <scene sceneID="8nH-Qq-s2B">
             <objects>
-                <viewController id="rB5-M0-wqV" sceneMemberID="viewController">
+                <viewController id="rB5-M0-wqV" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fwD-Sa-XYy"/>
                         <viewControllerLayoutGuide type="bottom" id="mDc-oR-prY"/>
@@ -240,6 +240,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meme" id="xrm-Vt-xyR"/>
+                    <connections>
+                        <outlet property="imageView" destination="5iy-CY-G9f" id="Chp-wi-yBf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubE-kF-QkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
