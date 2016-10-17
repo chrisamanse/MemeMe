@@ -162,6 +162,8 @@ class MemeViewController: UIViewController {
                         image: image,
                         memedImage: memedImage)
         
+        MemeCollection.default.memes.append(meme)
+        
         print("Saved meme: \(meme)")
     }
     
