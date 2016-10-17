@@ -218,7 +218,7 @@
         <!--Meme-->
         <scene sceneID="8nH-Qq-s2B">
             <objects>
-                <viewController id="rB5-M0-wqV" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="rB5-M0-wqV" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fwD-Sa-XYy"/>
                         <viewControllerLayoutGuide type="bottom" id="mDc-oR-prY"/>
@@ -231,9 +231,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mDc-oR-prY" firstAttribute="top" secondItem="5iy-CY-G9f" secondAttribute="bottom" id="5dS-ft-5bU"/>
                             <constraint firstAttribute="trailing" secondItem="5iy-CY-G9f" secondAttribute="trailing" id="HAq-Rc-Uik"/>
                             <constraint firstItem="5iy-CY-G9f" firstAttribute="top" secondItem="fwD-Sa-XYy" secondAttribute="bottom" id="OJs-35-D9z"/>
+                            <constraint firstAttribute="bottom" secondItem="5iy-CY-G9f" secondAttribute="bottom" id="Y9x-5w-qZU"/>
                             <constraint firstItem="5iy-CY-G9f" firstAttribute="leading" secondItem="vvr-xs-ETX" secondAttribute="leading" id="YvZ-yd-54i"/>
                         </constraints>
                     </view>
