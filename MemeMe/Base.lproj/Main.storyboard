@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -192,6 +193,10 @@
                                     <outlet property="memeImageView" destination="43Q-tC-7pa" id="Kwf-H0-nAa"/>
                                     <outlet property="memeLabel" destination="nl9-SG-gxn" id="Gex-T5-cZ5"/>
                                     <outlet property="topLabel" destination="a7h-08-KDV" id="MKh-OQ-ecF"/>
+                                    <segue destination="rB5-M0-wqV" kind="show" identifier="showDetail" action="showDetailViewController:sender:" id="9IY-ma-0g9">
+                                        <segue key="commit" inheritsFrom="parent" id="5t1-oJ-H7F"/>
+                                        <segue key="preview" inheritsFrom="commit" id="pZS-b8-Kif"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -211,6 +216,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xG6-eH-shA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704.79999999999995" y="475.41229385307349"/>
+        </scene>
+        <!--Meme-->
+        <scene sceneID="8nH-Qq-s2B">
+            <objects>
+                <viewController id="rB5-M0-wqV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fwD-Sa-XYy"/>
+                        <viewControllerLayoutGuide type="bottom" id="mDc-oR-prY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vvr-xs-ETX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meme" id="xrm-Vt-xyR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubE-kF-QkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="788"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="rlJ-sO-mnU">
@@ -263,6 +287,10 @@
                                     <outlet property="bottomLabel" destination="Hzz-6h-Nxb" id="fi9-V8-hE3"/>
                                     <outlet property="memeImageView" destination="6Lz-sr-bO4" id="dzQ-bx-t7f"/>
                                     <outlet property="topLabel" destination="3d5-S9-vVN" id="eWw-Vy-CLP"/>
+                                    <segue destination="rB5-M0-wqV" kind="show" identifier="showDetail" action="showDetailViewController:sender:" id="tww-oM-c67">
+                                        <segue key="commit" inheritsFrom="parent" id="pzJ-tO-ebt"/>
+                                        <segue key="preview" inheritsFrom="commit" id="lPs-d4-Cgu"/>
+                                    </segue>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -362,5 +390,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bJ6-0o-P6Z"/>
+        <segue reference="9IY-ma-0g9"/>
     </inferredMetricsTieBreakers>
 </document>
