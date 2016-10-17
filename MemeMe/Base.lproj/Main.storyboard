@@ -116,7 +116,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NAa-Qe-UbL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1c-qg-1nB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I1c-qg-1nB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,7 +137,7 @@
         <!--Sent Memes-->
         <scene sceneID="T1l-Qh-CDE">
             <objects>
-                <tableViewController id="Gha-hQ-9dc" sceneMemberID="viewController">
+                <tableViewController id="Gha-hQ-9dc" customClass="MemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="WUv-sp-iaT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yqi-kf-LTo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Collection" id="A9Q-nd-iUI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SBF-Ec-zTw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SBF-Ec-zTw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,7 +270,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VdU-08-ppX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" id="Sz8-VM-wQh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Am6-HI-tGp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Am6-HI-tGp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,6 +313,6 @@
         <image name="font" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bJ6-0o-P6Z"/>
+        <segue reference="ZOC-lm-145"/>
     </inferredMetricsTieBreakers>
 </document>
